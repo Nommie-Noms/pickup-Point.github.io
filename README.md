@@ -1,6 +1,6 @@
-# FastText Courier Service Website
+# Pickup Point Courier Service Website
 
-A modern, mobile-friendly website for **FastText Courier Service**, where customers can place courier orders by sending a text message.  
+A modern, mobile-friendly website for **Pickup Point Courier Service**, where customers can place courier orders by sending a text message.  
 The site includes sections for service details, terms of use, and employees with clickable **copy phone number** buttons.
 
 ---
@@ -65,3 +65,4 @@ The site includes sections for service details, terms of use, and employees with
 👉 With this, your project is **fully documented** and easy to hand off or deploy.  
 
 Would you like me to also give you a **GitHub-ready version** (with `.gitignore` and deployment instructions for GitHub Pages)?
+
