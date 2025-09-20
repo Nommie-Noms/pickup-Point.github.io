@@ -1,5 +1,5 @@
 // Copy phone number
-function NumberCopy(number) {
+function copyNumber(number) {
   navigator.clipboard.writeText(number).then(() => {
     alert("Phone number copied: " + number);
   });
@@ -18,4 +18,5 @@ hamburger.addEventListener('click', () => {
     navLinks.style.flexDirection = "column";
   }
 });
+
 
