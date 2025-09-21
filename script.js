@@ -1,7 +1,6 @@
 // Copy phone number
 function copyNumber(number) {
-  navigator.clipboard.writeText(number).then(() => {
-  });
+  navigator.clipboard.writeText(number).then(() => {  });
 }
 
 // Mobile menu toggle
@@ -17,6 +16,7 @@ hamburger.addEventListener('click', () => {
     navLinks.style.flexDirection = "column";
   }
 });
+
 
 
 
