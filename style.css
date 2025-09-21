@@ -170,6 +170,7 @@ button.copy-btn:hover {
 
 button.copy-btn:active {
   transform: scale(0.97);
+  background: #00FF00;
 }
 
 /* ===== Footer ===== */
@@ -190,5 +191,6 @@ footer {
     display: flex;
   }
 }
+
 
 
