@@ -1,5 +1,5 @@
 // Copy phone number (with fallback for older browsers)
-function copyNumber(number) {
+function copyToClipboard(number) {
   if (navigator.clipboard && window.isSecureContext) {
     // Modern method (works on HTTPS and localhost)
     navigator.clipboard.writeText(number).then(() => {
@@ -42,3 +42,4 @@ hamburger.addEventListener('click', () => {
     navLinks.style.flexDirection = "column";
   }
 });
+
