@@ -1,20 +1,26 @@
 // Copy phone number (with fallback for older browsers)
-function copyToClipboard(number) {
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.innerText = message;
+  toast.className = "show";
+
+  setTimeout(() => {
+    toast.className = toast.className.replace("show", "");
+  }, 2500); // disappears after 2.5s
+}
+
+function copyNumber(number) {
   if (navigator.clipboard && window.isSecureContext) {
-    // Modern method (works on HTTPS and localhost)
     navigator.clipboard.writeText(number).then(() => {
-      alert("Phone number copied: " + number);
-    }).catch(err => {
-      console.error("Clipboard error:", err);
+      showToast("Copied: " + number);
+    }).catch(() => {
       fallbackCopy(number);
     });
   } else {
-    // Fallback for older browsers
     fallbackCopy(number);
   }
 }
 
-// Fallback function using hidden textarea
 function fallbackCopy(number) {
   const textarea = document.createElement("textarea");
   textarea.value = number;
@@ -22,12 +28,13 @@ function fallbackCopy(number) {
   textarea.select();
   try {
     document.execCommand("copy");
-    alert("Phone number copied: " + number);
+    showToast("Copied: " + number);
   } catch (err) {
-    alert("Failed to copy. Please copy manually: " + number);
+    showToast("Failed to copy. Please copy manually.");
   }
   document.body.removeChild(textarea);
 }
+
 
 // Mobile menu toggle
 const hamburger = document.getElementById('hamburger');
@@ -42,4 +49,3 @@ hamburger.addEventListener('click', () => {
     navLinks.style.flexDirection = "column";
   }
 });
-
