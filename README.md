@@ -1,68 +1,99 @@
 # Pickup Point Courier Service Website
 
 A modern, mobile-friendly website for **Pickup Point Courier Service**, where customers can place courier orders by sending a text message.  
-The site includes sections for service details, terms of use, and employees with clickable **copy phone number** buttons.
+The site includes sections for service details, terms of use, and employees with clickable **copy phone number** functionality.
 
 ---
 
 ## 📂 Project Structure
 
+Pickup Point-website/
+├── index.html # Main HTML file
+├── style.css # Stylesheet
+├── script.js # JavaScript for interactions
+├── images/ # Employee profile photos and reload icon
+│ ├── jane.jpg
+│ ├── john.jpg
+│ ├── emily.jpg
+│ └── favicon.png
+└── README.md # Project documentation
+
 
 ---
 
 ## 🚀 Features
-- **Responsive Design** – Works seamlessly on desktop, tablet, and mobile.
-- **Top Navigation Bar** – Collapses into a hamburger menu on mobile.
-- **Hero Section** – Quick introduction to the service.
-- **How It Works** – Step-by-step explanation of the courier process.
-- **Terms of Use** – Legal terms and conditions.
-- **Employees Section** – Employee profiles with photos, roles, and copy phone number buttons.
-- **Copy Phone Number Buttons** – Instantly copies contact details to the clipboard.
+
+- 📱 **Responsive Design** – Works seamlessly on desktop, tablet, and mobile.  
+- 🔝 **Top Navigation Bar** – Collapses into a hamburger menu on mobile.  
+- 🔄 **Reload Button** – Navbar favicon reloads the page when clicked.  
+- ⚡ **How It Works** – Two steps side by side, with **“Fast Delivery”** centered below.  
+- 📜 **Terms of Use** – Legal terms and conditions.  
+- 👥 **Employees Section** – Employee profiles with photos, roles, and clickable phone numbers.  
+- 📋 **Copy to Clipboard** – Tap a number to instantly copy it.  
+- 🔔 **Toast Notifications** – Small popup confirms when numbers are copied.  
+- 🚫 **No Auto-Linking of Phone Numbers** – Prevents mobile browsers from forcing numbers into call links.  
+- 📲 **Manual Copy Backup** – Long-press on numbers to copy manually if JavaScript fails.  
 
 ---
 
 ## 🛠️ Setup Instructions
 
-1. **Download / Clone Project**  
-   - Download as `.zip` and extract  
-   - Or clone with Git:
-     ```bash
-     git clone https://github.com/yourusername/fasttext-website.git
-     ```
+1. **Clone or download this repo**  
+   ```bash
+   git clone https://github.com/yourusername/Pickup Point-website.git
 
-2. **File Placement**  
-   - Ensure `index.html`, `style.css`, and `script.js` are in the root folder.  
-   - Place employee profile photos in the `images/` folder.  
+2. Open locally
 
-3. **Run Locally**  
-   - Open `index.html` in your browser.  
-   - No server setup required (static site).  
+   - Open index.html in your browser.
 
-4. **Deploy Online**  
-   You can deploy easily to:
-   - [GitHub Pages](https://pages.github.com/)  
-   - [Netlify](https://www.netlify.com/)  
-   - [Vercel](https://vercel.com/)  
-   - Or your own hosting provider.  
+3. Customize employees
 
----
+   - Replace images in the images/ folder.
 
-## 📸 Customization
+   - Update names, roles, and numbers in index.html.
 
-- **Colors** → Update `style.css`, main brand color is `#7C94C4`.  
-- **Employees** → Edit `index.html` inside the `#employees` section. Update name, role, phone number, and image path. Example:
-  ```html
-  <div class="employee">
-    <img src="images/jane.jpg" alt="Jane Smith">
-    <h3>Jane Smith</h3>
-    <p>Customer Support</p>
-    <button class="copy-btn" onclick="copyNumber('+1 111 222 3333')">Copy Number</button>
-  </div>
+4. Customize reload icon
+
+   - Replace favicon.png with your own logo/icon if desired.
 
 
----
+🌐 Deployment (GitHub Pages)
 
-👉 With this, your project is **fully documented** and easy to hand off or deploy.  
+1. Push this project to a GitHub repo.
 
-Would you like me to also give you a **GitHub-ready version** (with `.gitignore` and deployment instructions for GitHub Pages)?
+2. Go to Settings → Pages.
 
+3. Under Branch, select main and set folder to / (root).
+
+4. Click Save.
+
+5. Your site will be live at: https://yourusername.github.io/Pickup Point-website/
+
+
+⚡ Notes
+
+* Phone numbers are displayed as clickable spans (<span>) instead of <a href="tel:">, so mobile browsers won’t auto-link them.
+
+* HTTPS required: Clipboard copying works best when the site is served over HTTPS (GitHub Pages, Netlify, Vercel all provide this free).
+
+* Fallback support: If clipboard API isn’t available, users can long-press the number to copy manually.
+
+* Custom branding: Update style.css to change colors, fonts, and navbar style.
+
+
+📸 Preview
+
+To add a screenshot of the site in action:
+
+1. Open the site in your browser.
+
+2. Capture a screenshot.
+
+3. Save it in the project folder (e.g., preview.png).
+
+4. Add this line to the README: ![Preview of Pickup Point Courier Service](preview.png)
+
+
+📄 License
+
+This project is licensed under the MIT License – feel free to use and modify it for your business.
