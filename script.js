@@ -23,18 +23,22 @@ function copyNumber(number) {
 }
 
 function fallbackCopy(number) {
-  const textarea = document.createElement("textarea");
-  textarea.value = number;
-  document.body.appendChild(textarea);
-  textarea.select();
+  const input = document.createElement("input");
+  input.value = number;
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999); // for mobile devices
+
   try {
     document.execCommand("copy");
     showToast("Copied: " + number);
   } catch (err) {
     showToast("Failed to copy. Please copy manually.");
   }
-  document.body.removeChild(textarea);
+
+  document.body.removeChild(input);
 }
+
 
 // Mobile menu toggle
 const hamburger = document.getElementById('hamburger');
@@ -48,3 +52,4 @@ hamburger.addEventListener('click', () => {
     navLinks.style.flexDirection = "column";
   }
 });
+
