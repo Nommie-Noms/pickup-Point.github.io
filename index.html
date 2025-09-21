@@ -3,22 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pickup Point Courier Service</title>
+  <meta name="description" content="FastText Courier Service – Send orders via text. Fast, reliable, and easy courier deliveries.">
+  <title>FastText Courier Service</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- Navbar -->
   <header class="navbar">
-    <img src="https://i.ibb.co/fd4CySVM/PICKUP-POINT-MINI.png" alt="Pickup Point Courier Service">
+    <h1>FastText</h1>
     <nav class="nav-links" id="nav-links">
+      <a href="#hero">Home</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#terms">Terms</a>
+      <a href="#employees">Employees</a>
     </nav>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </header>
 
   <!-- Hero -->
   <section class="hero" id="hero">
     <h2>Courier deliveries made simple</h2>
-    <p>Fast, reliable, and easy delivery service at your fingertips.</p>
+    <p>Place your order by sending a text to our number. Fast, reliable, and easy delivery service at your fingertips.</p>
   </section>
 
   <!-- How It Works -->
@@ -27,105 +37,59 @@
     <div class="steps">
       <div class="step">
         <h3>1. Send a Text</h3>
-        <p>Send a text message with your order to one of our employees.</p>
-          <p>With the product name and the store selling the product</p>
+        <p>Text us your pickup and drop-off details.</p>
       </div>
       <div class="step">
         <h3>2. Confirm Order</h3>
-        <p>We’ll reply with your delivery confirmation and price once we have arrived at the business.</p>
+        <p>We’ll reply with your delivery confirmation and price.</p>
       </div>
       <div class="step">
         <h3>3. Fast Delivery</h3>
-        <p>Our courier picks up and delivers your package or puts it into our storage dependant on your availability.</p>
+        <p>Our courier picks up and delivers your package quickly and securely.</p>
       </div>
     </div>
   </section>
 
-      <!-- Terms of Use -->
+  <!-- Terms of Use -->
   <section id="terms">
     <h2>Terms of Use</h2>
-    <div class="steps">
-      <div class="step">
-        <p>By using Pickup Point Courier Service, You agree to provide accurate delivery information.</p>
-        <p>We are not responsible for prohibited items or incorrect details provided by the sender.</p>
-        <p>Items requiring a license are collection only as we are required to check your license.</p>
-        <p>An invoice will be sent to you for the cost of the items +20% as a service cost.</p>
+    <p>By using FastText Courier, you agree to provide accurate delivery information. We are not responsible for prohibited items, delays due to force majeure, or incorrect details provided by the sender.</p>
+  </section>
+
+  <!-- Employees -->
+  <section id="employees">
+    <h2>Our Employees</h2>
+    <div class="employees">
+      <div class="employee">
+        <img src="images/jane.jpg" alt="Jane Smith">
+        <h3>Jane Smith</h3>
+        <p>Customer Support</p>
+        <p class="phone" onclick="copyNumber('+1 111 222 3333')">📞 +1 111 222 3333</p>
+      </div>
+      <div class="employee">
+        <img src="images/john.jpg" alt="John Doe">
+        <h3>John Doe</h3>
+        <p>Courier Manager</p>
+        <p class="phone" onclick="copyNumber('+1 444 555 6666')">📞 +1 444 555 6666</p>
+      </div>
+      <div class="employee">
+        <img src="images/emily.jpg" alt="Emily Johnson">
+        <h3>Emily Johnson</h3>
+        <p>Dispatch Coordinator</p>
+        <p class="phone" onclick="copyNumber('+1 777 888 9999')">📞 +1 777 888 9999</p>
       </div>
     </div>
   </section>
-  
-  <!-- Employees -->
-<section id="employees">
-  <h2>Our Employees</h2>
-  <div class="employees">
-    <div class="employee">
-      <img src="https://i.ibb.co/3ysRMDjM/70e440bbb593aa653651b6ef28d27237.png" alt="Missing">
-      <h3>Christopher Henderson</h3>
-      <p>Owner</p>
-      <span class="phone" onclick="copyNumber('8358360460')">(835) 836-0460</span>
-    </div>
-    <div class="employee">
-      <img src="https://i.ibb.co/0y2NLbq1/PICKUP-POINT-BLANK.png" alt="Vacant">
-      <h3>Vacant</h3>
-      <p>Vacant</p>
-      <p class="phone" onclick="copyNumber('+1 444 555 6666')">Testing</p>
-    </div>
-    <div class="employee">
-      <img src="https://i.ibb.co/0y2NLbq1/PICKUP-POINT-BLANK.png" alt="Vacant">
-      <h3>Vacant</h3>
-      <p>Vacant</p>
-      <p class="phone" onclick="copyNumber('+1 444 555 6666')">Testing</p>
-    </div>
-  </div>
-</section>
 
-  
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Pickup Point Courier Service. All rights reserved.</p>
-    <p>Powered by GitHub</p>
+    <p>&copy; 2025 FastText Courier Service. All rights reserved.</p>
   </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast"></div>
 
   <!-- Scripts -->
   <script src="script.js"></script>
-
-  <!-- Toast Notification -->
-<div id="toast"></div>
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
