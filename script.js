@@ -1,4 +1,4 @@
-// Copy phone number (with fallback for older browsers)
+// Show toast notification
 function showToast(message) {
   const toast = document.getElementById("toast");
   toast.innerText = message;
@@ -6,9 +6,10 @@ function showToast(message) {
 
   setTimeout(() => {
     toast.className = toast.className.replace("show", "");
-  }, 2500); // disappears after 2.5s
+  }, 2500);
 }
 
+// Copy phone number with fallback
 function copyNumber(number) {
   if (navigator.clipboard && window.isSecureContext) {
     navigator.clipboard.writeText(number).then(() => {
@@ -35,13 +36,11 @@ function fallbackCopy(number) {
   document.body.removeChild(textarea);
 }
 
-
 // Mobile menu toggle
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 
 hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('mobile');
   if (navLinks.style.display === "flex") {
     navLinks.style.display = "none";
   } else {
