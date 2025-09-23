@@ -79,7 +79,7 @@ p {
 /* ===== Hero ===== */
 .hero {
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
   background: #eef1f8;
 }
 
@@ -96,7 +96,7 @@ p {
 }
 
 .status-hero h2 {
-  color: #7C94C4;
+  color: #ff0000;
   margin-bottom: 1rem;
 }
 
@@ -238,6 +238,7 @@ footer {
     display: flex;
   }
 }
+
 
 
 
