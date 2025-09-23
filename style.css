@@ -139,13 +139,6 @@ section h2 {
   text-align: center;
 }
 
-/* Make the last box span full row and be centered */
-.step:last-child {
-  flex-basis: 100%;
-  max-width: 280px;
-  margin: 0 auto;
-}
-
 /* ===== Employees ===== */
 .employees {
   display: grid;
@@ -239,6 +232,7 @@ footer {
     display: flex;
   }
 }
+
 
 
 
