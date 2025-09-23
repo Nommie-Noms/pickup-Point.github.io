@@ -92,7 +92,7 @@ p {
 .status-hero {
   background: #dfe6f7; /* lighter shade to stand out from main hero */
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 2rem 2rem;
 }
 
 .status-hero h2 {
@@ -238,6 +238,7 @@ footer {
     display: flex;
   }
 }
+
 
 
 
