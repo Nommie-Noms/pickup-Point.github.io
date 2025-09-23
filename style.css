@@ -88,6 +88,25 @@ p {
   margin-bottom: 1rem;
 }
 
+/* Service Status Hero */
+.status-hero {
+  background: #dfe6f7; /* lighter shade to stand out from main hero */
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.status-hero h2 {
+  color: #7C94C4;
+  margin-bottom: 1rem;
+}
+
+.status-message {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+
 /* ===== Sections ===== */
 section {
   padding: 3rem 1.5rem;
@@ -219,6 +238,7 @@ footer {
     display: flex;
   }
 }
+
 
 
 
