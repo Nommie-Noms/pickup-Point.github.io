@@ -7,7 +7,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background: url("images/Background.png") no-repeat center center fixed;
+  background: url("images/Background.png") no-repeat center center scroll;
   background-size: cover;
   color: #333;
   line-height: 1.6;
@@ -98,6 +98,11 @@ p {
   border-radius: 8px; /* optional: rounded corners */
   margin: 2rem auto;
   max-width: 900px; /* keeps it from stretching too wide */
+
+  background: rgba(255, 255, 255, 0.7); /* semi-transparent white */
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 
@@ -159,6 +164,11 @@ section h2::after {
   padding: 1.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   text-align: center;
+
+  background: rgba(255, 255, 255, 0.7); /* semi-transparent white */
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 /* ===== Employees ===== */
@@ -174,6 +184,11 @@ section h2::after {
   padding: 1.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   text-align: center;
+
+  background: rgba(255, 255, 255, 0.7); /* semi-transparent white */
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .employee img {
@@ -254,6 +269,7 @@ footer {
     display: flex;
   }
 }
+
 
 
 
