@@ -52,17 +52,8 @@ hamburger.addEventListener('click', () => {
     navLinks.style.flexDirection = "column";
   }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("status-btn");
-  const statusSection = document.getElementById("status");
-
-  btn.addEventListener("click", () => {
-    const isHidden = getComputedStyle(statusSection).display === "none";
-    statusSection.style.display = isHidden ? "block" : "none";
-    if (isHidden) statusSection.scrollIntoView({ behavior: "smooth" });
-    btn.textContent = isHidden ? "Hide Service Status" : "Check Service Status";
-  });
 });
+
 
 
 
