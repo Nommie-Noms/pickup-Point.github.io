@@ -126,12 +126,18 @@ section {
 }
 
 section h2 {
-  text-align: center;
   display: inline-block;
-  background: rgba(255, 255, 255, 0.5); /* highlight */
+  background: rgba(255, 255, 255, 0.8);
   padding: 0.3em 0.8em;
   border-radius: 6px;
 }
+
+/* Remove background box from Service Status title */
+.status-hero h2 {
+  background: none;
+  padding: 0;
+}
+
 section {
   text-align: center; /* ensures h2 inside stays centered */
 }
@@ -269,6 +275,7 @@ footer {
     display: flex;
   }
 }
+
 
 
 
