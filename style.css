@@ -121,10 +121,16 @@ section {
 }
 
 section h2 {
-  position: relative;
+  text-align: center;
   display: inline-block;
-  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.8); /* highlight */
+  padding: 0.3em 0.8em;
+  border-radius: 6px;
 }
+section {
+  text-align: center; /* ensures h2 inside stays centered */
+}
+
 
 section h2::after {
   content: "";
@@ -248,6 +254,7 @@ footer {
     display: flex;
   }
 }
+
 
 
 
