@@ -7,7 +7,8 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f9f9fb;
+  background: url("https://i.ibb.co/1tY13pvk/AXIe-Eadt-Zm-Mp.webp") no-repeat center center fixed;
+  background-size: cover;
   color: #333;
   line-height: 1.6;
 }
@@ -232,6 +233,7 @@ footer {
     display: flex;
   }
 }
+
 
 
 
