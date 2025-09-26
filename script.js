@@ -1,3 +1,22 @@
+// script.js (top-level, not a module)
+document.addEventListener('DOMContentLoaded', function () {
+  const btn = document.getElementById('status-btn');
+  const status = document.getElementById('status');
+
+  if (!btn || !status) {
+    console.warn('status button or section not found');
+    return;
+  }
+
+  btn.addEventListener('click', function () {
+    const isHidden = getComputedStyle(status).display === 'none';
+    status.style.display = isHidden ? 'block' : 'none';
+    if (isHidden) status.scrollIntoView({ behavior: 'smooth' });
+    // optional: change button text
+    btn.textContent = isHidden ? 'Hide Service Status' : 'Check Service Status';
+  });
+});
+
 // Show toast notification
 function showToast(message) {
   const toast = document.getElementById("toast");
@@ -62,5 +81,6 @@ hamburger.addEventListener('click', () => {
   }
 }
 });
+
 
 
