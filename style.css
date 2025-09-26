@@ -100,7 +100,7 @@ p {
   margin: 2rem auto;
   max-width: 900px; /* keeps it from stretching too wide */
 
-  background: rgba(124, 148, 196, 0.3); /* #7C94C4 with 70% opacity */
+  background: rgba(124, 148, 196, 0.7); /* #7C94C4 with 70% opacity */
   color: white; /* for contrast */
   border-radius: 8px;
   padding: 1.5rem;
@@ -109,7 +109,7 @@ p {
 
 
 .status-hero h2 {
-  color: #ff0000;
+  color: #fff;
   margin-bottom: 1rem;
 }
 
@@ -128,7 +128,7 @@ section {
 
 section h2 {
   display: inline-block;
-  background: rgba(124, 148, 196, 0.3); /* #7C94C4 with 70% opacity */
+  background: rgba(124, 148, 196, 0.7); /* #7C94C4 with 70% opacity */
   color: white; /* for contrast */
   padding: 0.3em 0.8em;
   border-radius: 6px;
@@ -137,17 +137,6 @@ section h2 {
 
 section {
   text-align: center; /* ensures h2 inside stays centered */
-}
-
-
-section h2::after {
-  content: "";
-  display: block;
-  width: 60%;
-  height: 4px;
-  background: #7C94C4; /* your brand color */
-  margin: 0.3rem auto 0 auto;
-  border-radius: 2px;
 }
 
 /* Remove background box from Service Status title */
@@ -283,6 +272,7 @@ footer {
   border-radius: 8px;
   }
 }
+
 
 
 
