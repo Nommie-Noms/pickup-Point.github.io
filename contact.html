@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Pickup Point Courier Service</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1><img src="images/favicon.png" alt="Reload" class="reload-icon" onclick="location.reload()"></h1>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#how-it-works">How It Works</a>
+      <a href="index.html#terms">Terms</a>
+      <a href="index.html#employees">Employees</a>
+      <a href="contact.html">Contact</a> <!-- link to this page -->
+    </nav>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- Contact Form Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form action="https://formspree.io/f/yourformid" method="POST" class="contact-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="_replyto" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>2025 Pickup Point Courier Service. All rights reserved.</p>
+   <!-- <span class="phone" onclick="copyNumber('https://discord.gg/Sn5T3CymCF')">Employee Email Chain</span> */ -->
+    <p>Powered by GitHub.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
