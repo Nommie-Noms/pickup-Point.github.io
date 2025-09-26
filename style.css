@@ -121,11 +121,21 @@ section {
 }
 
 section h2 {
+  position: relative;
   display: inline-block;
-  background: rgba(255, 255, 255, 1); /* semi-transparent white */
-  padding: 0.3em 0.8em;
-  border-radius: 6px;
+  margin-bottom: 1rem;
 }
+
+section h2::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 4px;
+  background: #7C94C4; /* your brand color */
+  margin: 0.3rem auto 0 auto;
+  border-radius: 2px;
+}
+
 
 /* ===== Steps (How It Works) ===== */
 .steps {
@@ -238,6 +248,7 @@ footer {
     display: flex;
   }
 }
+
 
 
 
