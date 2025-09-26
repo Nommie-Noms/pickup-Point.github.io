@@ -128,7 +128,8 @@ section {
 
 section h2 {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(124, 148, 196, 0.3); /* #7C94C4 with 70% opacity */
+  color: white; /* for contrast */
   padding: 0.3em 0.8em;
   border-radius: 6px;
 }
@@ -282,6 +283,7 @@ footer {
   border-radius: 8px;
   }
 }
+
 
 
 
