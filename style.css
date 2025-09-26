@@ -92,10 +92,14 @@ p {
 
 /* Service Status Hero */
 .status-hero {
-  background: #dfe6f7; /* lighter shade to stand out from main hero */
   text-align: center;
-  padding: 2rem 2rem;
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.7); /* translucent white background */
+  border-radius: 8px; /* optional: rounded corners */
+  margin: 2rem auto;
+  max-width: 900px; /* keeps it from stretching too wide */
 }
+
 
 .status-hero h2 {
   color: #ff0000;
@@ -234,6 +238,7 @@ footer {
     display: flex;
   }
 }
+
 
 
 
