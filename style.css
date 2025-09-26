@@ -117,10 +117,6 @@ p {
   font-weight: 500;
 }
 
-#status {
-  display: none; /* hidden at first */
-}
-
 /* ===== Sections ===== */
 section {
   padding: 3rem 1.5rem;
@@ -282,6 +278,7 @@ footer {
   border-radius: 8px;
   }
 }
+
 
 
 
