@@ -132,11 +132,6 @@ section h2 {
   border-radius: 6px;
 }
 
-/* Remove background box from Service Status title */
-.status-hero h2 {
-  background: none;
-  padding: 0;
-}
 
 section {
   text-align: center; /* ensures h2 inside stays centered */
@@ -153,6 +148,11 @@ section h2::after {
   border-radius: 2px;
 }
 
+/* Remove background box from Service Status title */
+.status-hero h2 {
+  background: none;
+  padding: 0;
+}
 
 /* ===== Steps (How It Works) ===== */
 .steps {
@@ -275,6 +275,7 @@ footer {
     display: flex;
   }
 }
+
 
 
 
