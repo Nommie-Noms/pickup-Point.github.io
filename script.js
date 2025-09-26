@@ -52,17 +52,20 @@ hamburger.addEventListener('click', () => {
     navLinks.style.flexDirection = "column";
   }
 
-// Ensure this file is loaded with a normal <script src="script.js"></script> (no type="module")
+// Ensure this is global
 window.toggleStatus = function () {
-  const statusSection = document.getElementById('status');
+  const statusSection = document.getElementById("status");
   if (!statusSection) return;
-  if (statusSection.style.display === 'none' || statusSection.style.display === '') {
-    statusSection.style.display = 'block';
-    statusSection.scrollIntoView({ behavior: 'smooth' });
+
+  if (statusSection.style.display === "none" || statusSection.style.display === "") {
+    statusSection.style.display = "block";
+    statusSection.scrollIntoView({ behavior: "smooth" });
   } else {
-    statusSection.style.display = 'none';
+    statusSection.style.display = "none";
   }
-});
+};
+
+
 
 
 
