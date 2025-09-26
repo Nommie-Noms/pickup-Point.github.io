@@ -211,18 +211,18 @@ section h2::after {
 
 .employee h3 {
   margin: 0.5rem 0 0.3rem;
-  color: #7C94C4;
+  color: #000;
 }
 
 .employee p {
   margin: 0.3rem 0;
   font-size: 0.95rem;
-  color: #555;
+  color: #fff;
 }
 
 /* Clickable phone numbers */
 .phone {
-  color: #7C94C4;
+  color: #fff;
   font-weight: 600;
   cursor: pointer;
   margin-top: 0.5rem;
@@ -283,6 +283,7 @@ footer {
   border-radius: 8px;
   }
 }
+
 
 
 
