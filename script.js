@@ -52,18 +52,19 @@ hamburger.addEventListener('click', () => {
     navLinks.style.flexDirection = "column";
   }
 
-// Ensure this is global
-window.toggleStatus = function () {
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("status-btn");
   const statusSection = document.getElementById("status");
-  if (!statusSection) return;
 
-  if (statusSection.style.display === "none" || statusSection.style.display === "") {
-    statusSection.style.display = "block";
-    statusSection.scrollIntoView({ behavior: "smooth" });
-  } else {
-    statusSection.style.display = "none";
-  }
-};
+  btn.addEventListener("click", () => {
+    const isHidden = getComputedStyle(statusSection).display === "none";
+    statusSection.style.display = isHidden ? "block" : "none";
+    if (isHidden) statusSection.scrollIntoView({ behavior: "smooth" });
+    btn.textContent = isHidden ? "Hide Service Status" : "Check Service Status";
+  });
+});
+
+
 
 
 
