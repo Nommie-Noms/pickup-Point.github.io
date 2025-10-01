@@ -1,14 +1,9 @@
 const TRACKING_URL = "https://script.google.com/macros/s/AKfycbzgc6TdfeMx5yWM4CMXkGFWz_JJOjukrFvqj_wpA8qJhgE9mEFcmZjUVAaP9Vpug4m6/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM fully loaded ✅");
   const form = document.getElementById("tracking-form");
-  console.log("Form found:", form);
   if (form) {
     form.addEventListener("submit", checkOrder);
-    console.log("Listener attached to form ✅");
-  } else {
-    console.error("Form not found ❌");
   }
 });
 
@@ -20,7 +15,6 @@ async function fetchOrders() {
 
 async function checkOrder(event) {
   event.preventDefault();
-  console.log("checkOrder called ✅");
 
   const input = document.getElementById("order").value.trim();
   const statusBox = document.getElementById("order-status");
@@ -28,12 +22,12 @@ async function checkOrder(event) {
 
   try {
     const orders = await fetchOrders();
-    console.log("Orders data:", orders);
+    const order = orders.find(o => o.order === input);
 
     if (order) {
       statusBox.innerHTML = `
         ✅ Order <strong>${order.order}</strong><br>
-        📋 Status: ${order.response}
+        📋 Status: ${order.status}
       `;
     } else {
       statusBox.innerText = "❌ Order not found. Please check your number.";
@@ -43,7 +37,6 @@ async function checkOrder(event) {
     statusBox.innerText = "⚠️ Unable to check status. Please try again later.";
   }
 }
-
 
 // Show toast notification
 function showToast(message) {
@@ -100,6 +93,7 @@ hamburger.addEventListener('click', () => {
   }
 
 });
+
 
 
 
