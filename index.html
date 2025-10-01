@@ -44,14 +44,17 @@
     <p class="status-message">Delivery only, We are currently awaiting approval of our premises and can not provide collection services.</p>
   </section>
 
-<section id="tracking">
-  <form id="tracking-form">
-  <label for="order">Enter Order Number:</label>
-  <input type="text" id="order" required>
-  <button type="submit">Check Status</button>
-</form>
-<p id="order-status"></p>
+<section class="tracking">
+  <h2>Track Your Order</h2>
+  <form id="tracking-form" class="tracking-form">
+    <input type="text" id="order" placeholder="Enter Order Number" required>
+    <button type="submit">Check Status</button>
+  </form>
+  <div id="order-result" class="order-result hidden">
+    <p id="order-status"></p>
+  </div>
 </section>
+
   
   <!-- How It Works -->
   <section id="how-it-works">
@@ -132,6 +135,7 @@
 
 </body>
 </html>
+
 
 
 
