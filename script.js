@@ -21,14 +21,16 @@ function fetchOrders(callback) {
  * Handles order check form submission
  */
 function checkOrder(event) {
-  event.preventDefault(); // stop form refresh
+  event.preventDefault();
 
   const input = document.getElementById("order").value.trim();
   const statusBox = document.getElementById("order-status");
+  const resultContainer = document.getElementById("order-result");
+
   statusBox.innerText = "Checking...";
+  resultContainer.classList.remove("hidden");
 
   fetchOrders((orders) => {
-    console.log("Orders received:", orders); // debug log
     const order = orders.find((o) => o.order === input);
 
     if (order) {
@@ -41,6 +43,7 @@ function checkOrder(event) {
     }
   });
 }
+
 
 // Attach event listener
 document.addEventListener("DOMContentLoaded", () => {
@@ -109,6 +112,7 @@ hamburger.addEventListener('click', () => {
   }
 
 });
+
 
 
 
