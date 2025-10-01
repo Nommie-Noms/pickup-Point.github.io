@@ -1,4 +1,4 @@
-const TRACKING_URL = "https://script.google.com/macros/s/AKfycbzn98xDflVV0IjpLPFv5BqGxxD9hr8g36J52moxJOwMx6LtmvtL0Zp9tQKEr6tzkWgr4w/exec";
+const TRACKING_URL = "https://script.google.com/macros/s/AKfycbzgc6TdfeMx5yWM4CMXkGFWz_JJOjukrFvqj_wpA8qJhgE9mEFcmZjUVAaP9Vpug4m6/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM fully loaded ✅");
@@ -98,6 +98,7 @@ hamburger.addEventListener('click', () => {
   }
 
 });
+
 
 
 
