@@ -52,7 +52,34 @@ hamburger.addEventListener('click', () => {
     navLinks.style.flexDirection = "column";
   }
 
+const TRACKING_URL = "https://script.google.com/macros/s/AKfycbzn98xDflVV0IjpLPFv5BqGxxD9hr8g36J52moxJOwMx6LtmvtL0Zp9tQKEr6tzkWgr4w/exec"; // replace with Apps Script URL
+
+async function fetchOrders() {
+  const res = await fetch(TRACKING_URL);
+  const orders = await res.json();
+  return orders;
+}
+
+async function checkOrder(event) {
+  event.preventDefault();
+  const input = document.getElementById("order").value.trim();
+  const statusBox = document.getElementById("order-status");
+
+  const orders = await fetchOrders();
+  const order = orders.find(o => o.order === input);
+
+  if (order) {
+    statusBox.innerHTML = `
+      ✅ Order <strong>${order.order}</strong> found in <em>${order.sheet}</em>
+    `;
+  } else {
+    statusBox.innerText = "❌ Order not found. Please check your number.";
+  }
+}
+
+
 });
+
 
 
 
