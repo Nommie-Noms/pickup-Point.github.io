@@ -1,33 +1,37 @@
-const TRACKING_URL = "https://corsproxy.io/?" + encodeURIComponent(
-  "https://script.google.com/macros/s/AKfycbxUcWJ5ETGD4h8Pxtl0AcKyO-wsWZbUFLbo1movia60KUJ2DXkcApihdqI2u364U1kxLw/exec"
-);
+// Your Google Apps Script Web App URL
+const TRACKING_URL = "https://script.google.com/macros/s/AKfycbxUcWJ5ETGD4h8Pxtl0AcKyO-wsWZbUFLbo1movia60KUJ2DXkcApihdqI2u364U1kxLw/exec";
 
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("tracking-form");
-  if (form) {
-    form.addEventListener("submit", checkOrder);
-  }
-});
+/**
+ * Dynamically loads the Google Apps Script JSONP response
+ */
+function fetchOrders(callback) {
+  const script = document.createElement("script");
+  script.src = `${TRACKING_URL}?callback=handleResponse&_=${Date.now()}`; // cache-busting
+  document.body.appendChild(script);
 
-async function fetchOrders() {
-  const res = await fetch(TRACKING_URL);
-  if (!res.ok) throw new Error("Failed to fetch order data");
-  return await res.json();
+  // Define global callback
+  window.handleResponse = function (data) {
+    callback(data);
+    // Clean up script tag after use
+    script.remove();
+  };
 }
 
-async function checkOrder(event) {
-  event.preventDefault();
+/**
+ * Handles order check form submission
+ */
+function checkOrder(event) {
+  event.preventDefault(); // stop form refresh
 
   const input = document.getElementById("order").value.trim();
   const statusBox = document.getElementById("order-status");
   statusBox.innerText = "Checking...";
 
-  try {
-    const orders = await fetchOrders();
-    const order = orders.find(o => o.order === input);
+  fetchOrders((orders) => {
+    console.log("Orders received:", orders); // debug log
+    const order = orders.find((o) => o.order === input);
 
     if (order) {
-      console.log("Order found:", order);
       statusBox.innerHTML = `
         ✅ Order <strong>${order.order}</strong><br>
         📋 Status: ${order.status}
@@ -35,11 +39,20 @@ async function checkOrder(event) {
     } else {
       statusBox.innerText = "❌ Order not found. Please check your number.";
     }
-  } catch (err) {
-    console.error("Error fetching orders:", err);
-    statusBox.innerText = "⚠️ Unable to check status. Please try again later.";
-  }
+  });
 }
+
+// Attach event listener
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("tracking-form");
+  if (form) {
+    form.addEventListener("submit", checkOrder);
+    console.log("Tracking form ready ✅");
+  } else {
+    console.error("Tracking form not found ❌");
+  }
+});
+
 
 // Show toast notification
 function showToast(message) {
@@ -96,6 +109,7 @@ hamburger.addEventListener('click', () => {
   }
 
 });
+
 
 
 
