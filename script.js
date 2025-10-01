@@ -32,7 +32,8 @@ async function checkOrder(event) {
 
     if (order) {
       statusBox.innerHTML = `
-        ✅ Order <strong>${order.order}</strong> found in <em>${order.sheet}</em>
+        ✅ Order <strong>${order.order}</strong><br>
+        📋 Status: ${order.response}
       `;
     } else {
       statusBox.innerText = "❌ Order not found. Please check your number.";
@@ -42,6 +43,7 @@ async function checkOrder(event) {
     statusBox.innerText = "⚠️ Unable to check status. Please try again later.";
   }
 }
+
 
 // Show toast notification
 function showToast(message) {
@@ -98,6 +100,7 @@ hamburger.addEventListener('click', () => {
   }
 
 });
+
 
 
 
