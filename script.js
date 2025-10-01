@@ -1,6 +1,4 @@
-const TRACKING_URL = "https://corsproxy.io/?" + encodeURIComponent(
-  "https://script.google.com/macros/s/AKfycbzgc6TdfeMx5yWM4CMXkGFWz_JJOjukrFvqj_wpA8qJhgE9mEFcmZjUVAaP9Vpug4m6/exec"
-);
+const TRACKING_URL = "https://script.google.com/macros/s/AKfycbxUcWJ5ETGD4h8Pxtl0AcKyO-wsWZbUFLbo1movia60KUJ2DXkcApihdqI2u364U1kxLw/exec");
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -97,6 +95,7 @@ hamburger.addEventListener('click', () => {
   }
 
 });
+
 
 
 
