@@ -52,33 +52,43 @@ hamburger.addEventListener('click', () => {
     navLinks.style.flexDirection = "column";
   }
 
-const TRACKING_URL = "https://script.google.com/macros/s/AKfycbzn98xDflVV0IjpLPFv5BqGxxD9hr8g36J52moxJOwMx6LtmvtL0Zp9tQKEr6tzkWgr4w/exec"; // replace with Apps Script URL
+const TRACKING_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT4aAByfsAHB03gs4BThZSHL4CiAJ1lcfP6bmtgvPNAi4JUYzXDxKkdHOheKN21IJpKJtuwikkUz8Ye/pub?output=csv"; // replace with Apps Script deployment link
 
 async function fetchOrders() {
+  console.log("Fetching orders from:", TRACKING_URL);
   const res = await fetch(TRACKING_URL);
   const orders = await res.json();
+  console.log("Orders loaded:", orders);
   return orders;
 }
 
 async function checkOrder(event) {
   event.preventDefault();
+  console.log("checkOrder called"); // debug
   const input = document.getElementById("order").value.trim();
   const statusBox = document.getElementById("order-status");
+  statusBox.innerText = "Checking...";
 
-  const orders = await fetchOrders();
-  const order = orders.find(o => o.order === input);
+  try {
+    const orders = await fetchOrders();
+    const order = orders.find(o => o.order === input);
 
-  if (order) {
-    statusBox.innerHTML = `
-      ✅ Order <strong>${order.order}</strong> found in <em>${order.sheet}</em>
-    `;
-  } else {
-    statusBox.innerText = "❌ Order not found. Please check your number.";
+    if (order) {
+      statusBox.innerHTML = `
+        ✅ Order <strong>${order.order}</strong> found in <em>${order.sheet}</em>
+      `;
+    } else {
+      statusBox.innerText = "❌ Order not found. Please check your number.";
+    }
+  } catch (err) {
+    console.error("Error fetching orders:", err);
+    statusBox.innerText = "⚠️ Unable to check status. Please try again later.";
   }
 }
 
 
 });
+
 
 
 
