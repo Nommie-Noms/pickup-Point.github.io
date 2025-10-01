@@ -55,28 +55,25 @@ hamburger.addEventListener('click', () => {
 // Replace with your Google Apps Script Web App URL
 const TRACKING_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT4aAByfsAHB03gs4BThZSHL4CiAJ1lcfP6bmtgvPNAi4JUYzXDxKkdHOheKN21IJpKJtuwikkUz8Ye/pub?output=csv";
 
-// Attach event listener after DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("tracking-form");
   if (form) {
     form.addEventListener("submit", checkOrder);
+    console.log("Listener attached to form ✅");
+  } else {
+    console.error("Form not found ❌");
   }
 });
 
-// Fetch orders from Google Sheets Web App
 async function fetchOrders() {
-  console.log("Fetching orders from:", TRACKING_URL);
   const res = await fetch(TRACKING_URL);
   if (!res.ok) throw new Error("Failed to fetch order data");
-  const orders = await res.json();
-  console.log("Orders loaded:", orders);
-  return orders;
+  return await res.json();
 }
 
-// Handle order check
 async function checkOrder(event) {
-  event.preventDefault(); // stop form refresh
-  console.log("checkOrder called");
+  event.preventDefault(); // 🚫 stop form refresh
+  console.log("checkOrder called ✅");
 
   const input = document.getElementById("order").value.trim();
   const statusBox = document.getElementById("order-status");
@@ -102,6 +99,7 @@ async function checkOrder(event) {
 
 
 });
+
 
 
 
