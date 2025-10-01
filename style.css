@@ -109,10 +109,10 @@ p {
 
 /* Tracking Section */
 .tracking {
-  border-radius: 8px;
-  padding: 2rem;
-  margin: 2rem auto;
-  max-width: 600px;
+  background: none;   /* ❌ no background */
+  box-shadow: none;   /* ❌ no shadow */
+  border: none;
+  padding: 2rem 0;    /* keep spacing */
   text-align: center;
 }
 
@@ -121,6 +121,7 @@ p {
   font-size: 1.5rem;
 }
 
+/* Input + Button inline */
 .tracking-form {
   display: flex;
   gap: 0.5rem;
@@ -151,8 +152,9 @@ p {
   background-color: #5b73a6;
 }
 
-/* Result Box */
+/* Result Box (directly below input) */
 .order-result {
+  margin-top: 1rem;
   background: white;
   border: 2px solid #7C94C4;
   border-radius: 6px;
@@ -165,7 +167,6 @@ p {
 .hidden {
   display: none;
 }
-
 
 .status-hero h2 {
   color: #fff;
@@ -331,6 +332,7 @@ footer {
   border-radius: 8px;
   }
 }
+
 
 
 
