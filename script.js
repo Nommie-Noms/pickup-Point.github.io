@@ -25,6 +25,7 @@ async function checkOrder(event) {
     const order = orders.find(o => o.order === input);
 
     if (order) {
+      console.log("Order found:", order);
       statusBox.innerHTML = `
         ✅ Order <strong>${order.order}</strong><br>
         📋 Status: ${order.status}
@@ -93,6 +94,7 @@ hamburger.addEventListener('click', () => {
   }
 
 });
+
 
 
 
