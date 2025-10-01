@@ -130,7 +130,6 @@ p {
 }
 
 .tracking-form input {
-  flex: 1;
   padding: 0.6rem;
   border: 2px solid #7C94C4;
   border-radius: 4px;
@@ -332,6 +331,7 @@ footer {
   border-radius: 8px;
   }
 }
+
 
 
 
