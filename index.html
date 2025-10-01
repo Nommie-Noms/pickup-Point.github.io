@@ -45,12 +45,13 @@
 
   <section id="tracking">
   <h2>Track Your Order</h2>
-  <form onsubmit="checkOrder(event)">
-    <label for="order">Enter Order Number:</label>
-    <input type="text" id="order" required>
-    <button type="submit">Check Status</button>
-  </form>
-  <p id="order-status"></p>
+  <form id="tracking-form">
+  <label for="order">Enter Order Number:</label>
+  <input type="text" id="order" required>
+  <button type="submit">Check Status</button>
+</form>
+<p id="order-status"></p>
+
 </section>
 
   <!-- How It Works -->
@@ -134,6 +135,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
