@@ -31,7 +31,7 @@ async function checkOrder(event) {
     } else {
       statusBox.innerHTML = `
         ✅ <strong>${order.order}</strong><br>
-        : ${order.status}
+        ${order.status}
       `;
     }
   } catch (err) {
@@ -105,6 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     banner.style.top = navHeight + "px";
   }
 });
+
 
 
 
