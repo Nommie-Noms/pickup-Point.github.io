@@ -110,7 +110,16 @@ hamburger.addEventListener('click', () => {
     navLinks.style.flexDirection = "column";
   }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const navbar = document.querySelector(".navbar");
+  const banner = document.querySelector(".service-status-banner");
+  
+  if (navbar && banner) {
+    const navHeight = navbar.offsetHeight;
+    banner.style.top = navHeight + "px";
+  }
 });
+
 
 
 
