@@ -35,11 +35,11 @@ function checkOrder(event) {
 
     if (order) {
       statusBox.innerHTML = `
-        ✅ Order <strong>${order.order}</strong><br>
-        📋 Status: ${order.status}
+        Order <strong>${order.order}</strong><br>
+        ${order.status}
       `;
     } else {
-      statusBox.innerText = "❌ Order not found. Please check your number.";
+      statusBox.innerText = "Order not found. Please check your number.";
     }
   });
 }
@@ -109,6 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 });
+
 
 
 
