@@ -2,25 +2,29 @@
 const TRACKING_URL = "https://script.google.com/macros/s/AKfycbxUcWJ5ETGD4h8Pxtl0AcKyO-wsWZbUFLbo1movia60KUJ2DXkcApihdqI2u364U1kxLw/exec";
 
 /**
- * Dynamically loads the Google Apps Script JSONP response
+ * Load order data via JSONP
  */
 function fetchOrders(callback) {
   const script = document.createElement("script");
-  script.src = `${TRACKING_URL}?callback=handleResponse&_=${Date.now()}`; // cache-busting
+  // Add a timestamp to avoid caching
+  script.src = `${TRACKING_URL}?callback=handleResponse&_=${Date.now()}`;
   document.body.appendChild(script);
 
-  // Define global callback
+  // Global JSONP callback
   window.handleResponse = function (data) {
-    callback(data);
-    // Clean up script tag after use
-    script.remove();
+    if (typeof callback === "function") {
+      callback(data);
+    } else {
+      console.error("No valid callback function provided.");
+    }
+    script.remove(); // clean up
   };
 }
 
 /**
- * Handles order check form submission
+ * Handle form submission
  */
-async function checkOrder(event) {
+function checkOrder(event) {
   event.preventDefault();
 
   const input = document.getElementById("order").value.trim().toLowerCase();
@@ -30,28 +34,25 @@ async function checkOrder(event) {
   statusBox.innerText = "Checking...";
   resultContainer.classList.remove("hidden");
 
-  try {
-    const orders = await fetchOrders(); // ✅ fetch all
-    const order = orders.find(o => o.order.toLowerCase() === input); // ✅ case-insensitive
+  fetchOrders((orders) => {
+    console.log("Orders received:", orders);
+
+    const order = orders.find(o => o.order.toLowerCase() === input);
 
     if (order) {
       statusBox.innerHTML = `
-        <strong>${order.order}</strong><br>
-        ${order.status}
+        ✅ Order <strong>${order.order}</strong><br>
+        📋 Status: ${order.status}
       `;
     } else {
-      statusBox.innerText = "Order not found. Please check your number.";
+      statusBox.innerText = "❌ Order not found. Please check your number.";
     }
-  } catch (err) {
-    console.error("Error fetching orders:", err);
-    statusBox.innerText = "Unable to check status. Please try again later.";
-  }
+  });
 }
 
-
-
-
-// Attach event listener
+/**
+ * Attach event listener when page loads
+ */
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("tracking-form");
   if (form) {
@@ -61,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Tracking form not found ❌");
   }
 });
+
 
 // Show toast notification
 function showToast(message) {
@@ -113,6 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
     banner.style.top = navHeight + "px";
   }
 });
+
 
 
 
