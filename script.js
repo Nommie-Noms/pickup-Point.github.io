@@ -56,16 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-function toggleStatus() {
-  const statusSection = document.getElementById("status");
-  if (statusSection.style.display === "none" || statusSection.style.display === "") {
-    statusSection.style.display = "block";
-    statusSection.scrollIntoView({ behavior: "smooth" });
-  } else {
-    statusSection.style.display = "none";
-  }
-}
-
 // Show toast notification
 function showToast(message) {
   const toast = document.getElementById("toast");
@@ -121,6 +111,7 @@ hamburger.addEventListener('click', () => {
   }
 
 });
+
 
 
 
