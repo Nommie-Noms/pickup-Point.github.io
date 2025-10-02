@@ -73,22 +73,23 @@ p {
   padding: 0.5rem 0;
 }
 
-/* Service Status Banner - simple sticky */
+/* Service Status Banner - sticky */
 .service-status-banner {
   position: sticky;
-  top: 0; /* sticks to top of page content */
-  z-index: 999;
+  top: 60px; /* adjust to your navbar height */
+  z-index: 999; /* keep it above content */
   
-  background-color: #7C94C4;
+  background-color: #7C94C4;   /* matches your theme */
   color: white;
   text-align: center;
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0.5rem;     /* thinner height */
   font-size: 0.85rem;
   font-weight: 600;
   
-  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15); /* subtle shadow */
+  border-bottom: 1px solid rgba(0,0,0,0.1); /* divider line */
 }
+
 
 /* Tracking Section */
 .tracking {
@@ -323,6 +324,7 @@ footer {
   border-radius: 8px;
   }
 }
+
 
 
 
