@@ -20,7 +20,7 @@ function fetchOrders(callback) {
 /**
  * Handles order check form submission
  */
-function checkOrder(event) {
+async function checkOrder(event) {
   event.preventDefault();
 
   const input = document.getElementById("order").value.trim();
@@ -30,19 +30,28 @@ function checkOrder(event) {
   statusBox.innerText = "Checking...";
   resultContainer.classList.remove("hidden");
 
-  fetchOrders((orders) => {
-    const order = orders.find((o) => o.order === input);
+  try {
+    const order = await fetchOrder(input);
 
-    if (order) {
-      statusBox.innerHTML = `
-        Order <strong>${order.order}</strong><br>
-        ${order.status}
-      `;
+    if (order.error) {
+      statusBox.innerText = "❌ " + order.error;
     } else {
-      statusBox.innerText = "Order not found. Please check your number.";
+      // ✅ make case-insensitive comparison
+      if (order.order.toLowerCase() === input.toLowerCase()) {
+        statusBox.innerHTML = `
+          <strong>${order.order}</strong><br>
+          ${order.status}
+        `;
+      } else {
+        statusBox.innerText = "Order not found. Please check your number.";
+      }
     }
-  });
+  } catch (err) {
+    console.error("Error fetching order:", err);
+    statusBox.innerText = "Unable to check status. Please try again later.";
+  }
 }
+
 
 
 // Attach event listener
@@ -107,6 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
     banner.style.top = navHeight + "px";
   }
 });
+
 
 
 
