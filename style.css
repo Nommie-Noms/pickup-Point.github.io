@@ -77,22 +77,16 @@ p {
   padding: 0.5rem 0;
 }
 
-/* Service Status Hero */
-.status-hero {
+/* Service Status Banner */
+.service-status-banner {
+  background-color: #7C94C4;  /* matches your theme */
+  color: white;
   text-align: center;
-  padding: 3rem 2rem;
-  background: rgba(124, 148, 196, 0.3); /* #7C94C4 with 70% opacity */
-  color: white; /* for contrast */
-  border-radius: 8px; /* optional: rounded corners */
-  margin: 2rem auto;
-  max-width: 900px; /* keeps it from stretching too wide */
-
-  background: rgba(124, 148, 196, 0.7); /* #7C94C4 with 70% opacity */
-  color: white; /* for contrast */
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: bold;
 }
+
 
 /* Tracking Section */
 .tracking {
@@ -318,6 +312,7 @@ footer {
   border-radius: 8px;
   }
 }
+
 
 
 
