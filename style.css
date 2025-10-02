@@ -94,6 +94,11 @@ p {
   border-bottom: 1px solid rgba(0,0,0,0.1); /* divider line */
 }
 
+.service-status-banner p {
+  margin: 0;         /* remove default p margins */
+  line-height: 1.4;  /* control text spacing */
+  padding: 0.25rem;  /* tiny breathing room */
+}
 
 /* Tracking Section */
 .tracking {
@@ -328,6 +333,7 @@ footer {
   border-radius: 8px;
   }
 }
+
 
 
 
