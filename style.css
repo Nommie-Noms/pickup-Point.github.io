@@ -24,10 +24,14 @@ p {
 
 /* ===== Navbar ===== */
 .navbar {
-  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #a0c2e8;
+  padding: 1rem 2rem;
+  color: white;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   z-index: 1000;
 }
 
@@ -324,6 +328,7 @@ footer {
   border-radius: 8px;
   }
 }
+
 
 
 
