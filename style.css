@@ -157,6 +157,8 @@ p {
 .order-result {
   max-width: 350px;
   width: 100%;
+  max-height: 200px;       /* or whatever height fits your layout */
+  overflow-y: auto;        /* enables vertical scrolling if content exceeds max-height */
   margin-top: 1rem;
   background-color: rgba(225, 225, 225, 0.7);
   border: 2px solid #7C94C4;
@@ -335,6 +337,7 @@ footer {
   border-radius: 8px;
   }
 }
+
 
 
 
