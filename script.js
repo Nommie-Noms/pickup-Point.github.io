@@ -23,7 +23,7 @@ function fetchOrders(callback) {
 async function checkOrder(event) {
   event.preventDefault();
 
-  const input = document.getElementById("order").value.trim();
+  const input = document.getElementById("order").value.trim().toLowerCase();
   const statusBox = document.getElementById("order-status");
   const resultContainer = document.getElementById("order-result");
 
@@ -31,26 +31,23 @@ async function checkOrder(event) {
   resultContainer.classList.remove("hidden");
 
   try {
-    const order = await fetchOrder(input);
+    const orders = await fetchOrders(); // ✅ fetch all
+    const order = orders.find(o => o.order.toLowerCase() === input); // ✅ case-insensitive
 
-    if (order.error) {
-      statusBox.innerText = "❌ " + order.error;
+    if (order) {
+      statusBox.innerHTML = `
+        <strong>${order.order}</strong><br>
+        ${order.status}
+      `;
     } else {
-      // ✅ make case-insensitive comparison
-      if (order.order.toLowerCase() === input.toLowerCase()) {
-        statusBox.innerHTML = `
-          <strong>${order.order}</strong><br>
-          ${order.status}
-        `;
-      } else {
-        statusBox.innerText = "Order not found. Please check your number.";
-      }
+      statusBox.innerText = "Order not found. Please check your number.";
     }
   } catch (err) {
-    console.error("Error fetching order:", err);
+    console.error("Error fetching orders:", err);
     statusBox.innerText = "Unable to check status. Please try again later.";
   }
 }
+
 
 
 
@@ -116,6 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
     banner.style.top = navHeight + "px";
   }
 });
+
 
 
 
