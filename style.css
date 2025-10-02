@@ -24,14 +24,10 @@ p {
 
 /* ===== Navbar ===== */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #a0c2e8;
-  padding: 1rem 2rem;
-  color: white;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
 }
 
@@ -79,19 +75,20 @@ p {
 
 /* Service Status Banner - sticky */
 .service-status-banner {
-  position: sticky;
-  top: 60px; /* adjust to your navbar height */
-  z-index: 999; /* keep it above content */
+  position: fixed;
+  top: 0; /* will adjust with JS */
+  left: 0;
+  right: 0;
+  z-index: 999;
   
-  background-color: #7C94C4;   /* matches your theme */
+  background-color: #7C94C4;
   color: white;
   text-align: center;
-  padding: 0.25rem 0.5rem;     /* thinner height */
+  padding: 0.25rem 0.5rem;
   font-size: 0.85rem;
   font-weight: 600;
-  
-  box-shadow: 0 1px 3px rgba(0,0,0,0.15); /* subtle shadow */
-  border-bottom: 1px solid rgba(0,0,0,0.1); /* divider line */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 
@@ -329,6 +326,7 @@ footer {
   border-radius: 8px;
   }
 }
+
 
 
 
