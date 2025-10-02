@@ -80,7 +80,7 @@ p {
 /* Service Status Banner - sticky */
 .service-status-banner {
   position: sticky;
-  top: 60px; /* adjust to your navbar height */
+  top: 72px; /* adjust to your navbar height */
   z-index: 999; /* keep it above content */
   
   background-color: #7C94C4;   /* matches your theme */
@@ -328,6 +328,7 @@ footer {
   border-radius: 8px;
   }
 }
+
 
 
 
