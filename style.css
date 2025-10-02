@@ -138,7 +138,7 @@ p {
 .tracking-form button {
   max-width: 280px;
   width: 100%; /* make button same width as input */
-  background-color: #7C94C4;
+  background-color: rgba(225, 225, 225, 0.7);
   border: none;
   color: white;
   padding: 0.6rem;
@@ -333,6 +333,7 @@ footer {
   border-radius: 8px;
   }
 }
+
 
 
 
