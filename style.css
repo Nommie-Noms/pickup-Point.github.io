@@ -102,15 +102,20 @@ p {
   font-size: 1.5rem;
 }
 
-/* Input + Button inline */
+/* Tracking Form: stack input + button */
 .tracking-form {
   display: flex;
-  gap: 0.5rem;
-  justify-content: center;
+  flex-direction: column;  /* stack vertically */
+  align-items: center;
+  gap: 0.75rem;  /* spacing between input + button */
   margin-bottom: 1rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .tracking-form input {
+  width: 100%;
   padding: 0.6rem;
   border: 2px solid #7C94C4;
   border-radius: 4px;
@@ -118,10 +123,11 @@ p {
 }
 
 .tracking-form button {
+  width: 100%; /* make button same width as input */
   background-color: #7C94C4;
   border: none;
   color: white;
-  padding: 0.6rem 1rem;
+  padding: 0.6rem;
   border-radius: 4px;
   cursor: pointer;
   font-size: 1rem;
@@ -131,6 +137,7 @@ p {
 .tracking-form button:hover {
   background-color: #5b73a6;
 }
+
 
 /* Result Box (directly below input) */
 .order-result {
@@ -312,6 +319,7 @@ footer {
   border-radius: 8px;
   }
 }
+
 
 
 
