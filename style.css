@@ -339,6 +339,43 @@ footer {
   }
 }
 
+.expandable-image {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Button styling */
+#expand-btn {
+  background-color: #7C94C4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#expand-btn:hover {
+  background-color: #5b73a6;
+}
+
+/* Image hidden by default */
+#expand-img {
+  display: none;
+  margin-top: 1rem;
+  max-width: 90%;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: opacity 0.4s ease;
+}
+
+/* Visible state */
+#expand-img.visible {
+  display: block;
+  opacity: 1;
+}
+
 
 
 
