@@ -51,21 +51,40 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     console.error("Tracking form not found ❌");
   }
+
+  // Adjust service banner position
+  const navbar = document.querySelector(".navbar");
+  const banner = document.querySelector(".service-status-banner");
+  if (navbar && banner) {
+    const navHeight = navbar.offsetHeight;
+    banner.style.top = navHeight + "px";
+  }
+
+  // Expandable image logic
+  const expandBtn = document.getElementById("expand-btn");
+  const expandImg = document.getElementById("expand-img");
+  if (expandBtn && expandImg) {
+    expandBtn.addEventListener("click", () => {
+      const isVisible = expandImg.classList.toggle("visible");
+      expandBtn.textContent = isVisible ? "Hide Image" : "View Image";
+    });
+  } else {
+    console.error("Expand elements not found in DOM");
+  }
 });
 
-
-// Show toast notification
+/**
+ * Toast + Copy Functions
+ */
 function showToast(message) {
   const toast = document.getElementById("toast");
   toast.innerText = message;
   toast.className = "show";
-
   setTimeout(() => {
     toast.className = toast.className.replace("show", "");
   }, 2500);
 }
 
-// Copy phone number with fallback
 function copyNumber(number) {
   if (navigator.clipboard && window.isSecureContext) {
     navigator.clipboard.writeText(number).then(() => {
@@ -84,36 +103,11 @@ function fallbackCopy(number) {
   document.body.appendChild(input);
   input.select();
   input.setSelectionRange(0, 99999); // for mobile devices
-
   try {
     document.execCommand("copy");
     showToast("Copied: " + number);
   } catch (err) {
     showToast("Failed to copy. Please copy manually.");
   }
-
   document.body.removeChild(input);
 }
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const navbar = document.querySelector(".navbar");
-  const banner = document.querySelector(".service-status-banner");
-  
-  if (navbar && banner) {
-    const navHeight = navbar.offsetHeight;
-    banner.style.top = navHeight + "px";
-  }
-document.addEventListener("DOMContentLoaded", () => {
-  const expandBtn = document.getElementById("expand-btn");
-  const expandImg = document.getElementById("expand-img");
-
-  if (expandBtn && expandImg) {
-    expandBtn.addEventListener("click", () => {
-      const isVisible = expandImg.classList.toggle("visible");
-      expandBtn.textContent = isVisible ? "Hide Image" : "View Image";
-    });
-  } else {
-    console.error("Expand elements not found in DOM");
-  }
-});
