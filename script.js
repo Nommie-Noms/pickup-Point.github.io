@@ -113,8 +113,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const isVisible = expandImg.classList.toggle("visible");
       expandBtn.textContent = isVisible ? "Hide Image" : "View Image";
     });
+  } else {
+    console.error("Expand elements not found in DOM");
   }
 });
+
+
 
 
 
