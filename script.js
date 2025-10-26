@@ -104,7 +104,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const navHeight = navbar.offsetHeight;
     banner.style.top = navHeight + "px";
   }
+document.addEventListener("DOMContentLoaded", () => {
+  const expandBtn = document.getElementById("expand-btn");
+  const expandImg = document.getElementById("expand-img");
+
+  if (expandBtn && expandImg) {
+    expandBtn.addEventListener("click", () => {
+      const isVisible = expandImg.classList.toggle("visible");
+      expandBtn.textContent = isVisible ? "Hide Image" : "View Image";
+    });
+  }
 });
+
+
 
 
 
