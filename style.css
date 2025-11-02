@@ -244,6 +244,7 @@ section {
 
 .employee {
   background: white;
+  max-width: 280px;
   border-radius: 8px;
   padding: 1.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -381,6 +382,7 @@ footer {
   display: block;
   opacity: 1;
 }
+
 
 
 
