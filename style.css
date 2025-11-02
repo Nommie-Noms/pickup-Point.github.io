@@ -242,6 +242,11 @@ section {
   gap: 1.5rem;
 }
 
+  /* ✅ Center the single employee box */
+  justify-content: center;
+  justify-items: center;
+}
+
 .employee {
   background: white;
   max-width: 280px;
@@ -382,6 +387,7 @@ footer {
   display: block;
   opacity: 1;
 }
+
 
 
 
