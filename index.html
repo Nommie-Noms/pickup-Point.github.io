@@ -81,18 +81,77 @@
     </div>
   </section>
 
-  <!-- Employees -->
-  <section id="employees">
-    <h2>Owner</h2>
-    <div class="employee-container">
-      <div class="employee">
-        <img src="images/Screenshot 2025-09-22 133530.png" alt="Missing">
-        <h3>Christopher Henderson</h3>
-        <p>Owner</p>
-        <span class="phone" onclick="copyNumber('8356439887')">(835)643-9887</span>
-      </div>
-    </div>
-  </section>
+/* ===== Employees (single centered) ===== */
+.employees {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 280px));
+  gap: 1.5rem;
+  justify-content: center;   /* center grid horizontally */
+  justify-items: center;     /* center each box inside the grid */
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.employees h2 {
+  grid-column: 1 / -1; /* title spans full width of grid */
+  background: rgba(124, 148, 196, 0.7); /* theme highlight */
+  color: #fff;
+  padding: 0.3em 0.8em;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+}
+
+.employee {
+  width: 280px;
+  max-width: 90%;
+  background: rgba(124, 148, 196, 0.7); /* #7C94C4 with 70% opacity */
+  color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.employee img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.employee h3 {
+  margin: 0.5rem 0 0.3rem;
+  color: #000;
+}
+
+.employee p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.phone {
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+.phone:hover,
+.phone:focus {
+  color: #5e6f99;
+  text-decoration: underline;
+}
+
+/* Ensure single employee always centered */
+.employees > .employee:only-child {
+  justify-self: center;
+}
+
 
 <!--<div class="expandable-image">
   <button id="expand-btn" type="button">Find Us</button>
@@ -116,6 +175,7 @@
 
 </body>
 </html>
+
 
 
 
