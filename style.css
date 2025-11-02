@@ -241,10 +241,11 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
 
-  /* ✅ Center the single employee box */
+  /* ✅ Center the single employee box horizontally */
   justify-content: center;
   justify-items: center;
 }
+
 
 .employee {
   background: white;
@@ -386,6 +387,7 @@ footer {
   display: block;
   opacity: 1;
 }
+
 
 
 
