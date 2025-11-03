@@ -155,10 +155,10 @@ p {
 
 /* Result Box (directly below input) */
 .order-result {
-  max-width: 270px;
+  max-width: 220px;
   width: 100%;
-  min-height: 92px;
-  max-height: 100px;
+  min-height: 120px;
+  max-height: 120px;
   overflow-y: auto;       /* enables vertical scrolling if content exceeds max-height */
   margin-top: 1rem;
   background-color: rgba(225, 225, 225, 0.7);
@@ -404,6 +404,7 @@ footer {
   display: block;
   opacity: 1;
 }
+
 
 
 
