@@ -127,7 +127,7 @@ p {
 }
 
 .tracking-form input {
-  max-width: 280px;
+  max-width: 230px;
   width: 100%;
   padding: 0.6rem;
   border: 2px solid #7C94C4;
@@ -413,6 +413,7 @@ footer {
   display: block;
   opacity: 1;
 }
+
 
 
 
