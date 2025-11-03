@@ -302,7 +302,7 @@ section {
 }
 
 /* Ensure single employee always centered */
-.employees > .employee:only-child {
+.employee {
   justify-self: center;
 }
 
@@ -413,6 +413,7 @@ footer {
   display: block;
   opacity: 1;
 }
+
 
 
 
