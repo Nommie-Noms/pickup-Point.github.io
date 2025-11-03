@@ -243,7 +243,7 @@ section {
   justify-content: center;   /* center grid horizontally */
   justify-items: center;     /* center each box inside the grid */
   text-align: center;
-  padding: 3rem 1.5rem;
+  padding: 0rem 1.5rem;
 }
 
 .employees h2 {
@@ -413,6 +413,7 @@ footer {
   display: block;
   opacity: 1;
 }
+
 
 
 
