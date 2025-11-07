@@ -30,6 +30,7 @@ async function checkOrder(event) {
       statusBox.innerText = "❌ " + order.error;
 
       // Hide progress bar if error
+      console.log("Progress elements found:", progressContainer, progressBar);
       const progressContainer = document.getElementById("order-progress");
       if (progressContainer) progressContainer.classList.add("hidden");
 
@@ -50,6 +51,7 @@ async function checkOrder(event) {
         let progress = 0;
         const statusText = order.status.toLowerCase();
 
+        console.log("Order status text:", order.status);
         if (statusText.includes("Processing.")) progress = 0;
         else if (statusText.includes("Sourcing your order.")) progress = 25;
         else if (statusText.includes("Collecting your order.")) progress = 50;
@@ -143,6 +145,7 @@ function fallbackCopy(number) {
   }
   document.body.removeChild(input);
 }
+
 
 
 
