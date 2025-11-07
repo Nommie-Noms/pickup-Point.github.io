@@ -155,12 +155,12 @@ p {
 
 /* Result Box (directly below input) */
 .order-result {
-  max-width: 220px;
+  max-width: 270px;
   width: 100%;
-  min-height: 120px;
-  max-height: 120px;
-  overflow-y: auto;       /* enables vertical scrolling if content exceeds max-height */
-  margin-top: 1rem;
+  min-height: 150px;
+  max-height: 150px;
+  overflow-y: auto;
+  margin: 1rem auto 0 auto;   /* ✅ centers horizontally */
   background-color: rgba(225, 225, 225, 0.7);
   border: 2px solid #7C94C4;
   border-radius: 6px;
@@ -168,6 +168,7 @@ p {
   text-align: center;
   font-size: 1.1rem;
   color: #333;
+  box-sizing: border-box;
 }
 
 .hidden {
@@ -442,6 +443,7 @@ footer {
   transition: width 0.8s ease;
   border-radius: 6px;
 }
+
 
 
 
