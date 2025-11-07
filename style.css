@@ -405,14 +405,32 @@ footer {
   opacity: 1;
 }
 
-/* ===== Order Progress Bar ===== */
-.order-progress {
+/* ===== Centered Order Result and Progress Bar ===== */
+.order-result {
+  max-width: 270px;
   width: 100%;
-  max-width: 250px;
+  min-height: 92px;
+  max-height: 100px;
+  overflow-y: auto;
+  margin: 1rem auto 0 auto;   /* ✅ centers horizontally */
+  background-color: rgba(225, 225, 225, 0.7);
+  border: 2px solid #7C94C4;
+  border-radius: 6px;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #333;
+  box-sizing: border-box;
+}
+
+/* Center the progress bar within the result box */
+.order-progress {
+  margin: 1rem auto 0 auto;   /* ✅ centers horizontally under status text */
+  width: 100%;
+  max-width: 200px;           /* keep smaller than result box */
   height: 12px;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 6px;
-  margin: 1rem auto 0;
   overflow: hidden;
   box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2);
 }
@@ -420,10 +438,11 @@ footer {
 .progress-bar {
   height: 100%;
   width: 0;
-  background-color: #4CAF50; /* green */
+  background-color: #4CAF50;
   transition: width 0.8s ease;
   border-radius: 6px;
 }
+
 
 
 
