@@ -50,10 +50,13 @@ async function checkOrder(event) {
         let progress = 0;
         const statusText = order.status.toLowerCase();
 
-        if (statusText.includes("received")) progress = 25;
-        else if (statusText.includes("processing")) progress = 50;
-        else if (statusText.includes("in transit") || statusText.includes("out for delivery")) progress = 75;
-        else if (statusText.includes("delivered")) progress = 100;
+        if (statusText.includes("Processing.")) progress = 0;
+        else if (statusText.includes("Sourcing your order.")) progress = 25;
+        else if (statusText.includes("Collecting your order.")) progress = 50;
+        else if (statusText.includes("Enroute to the delivery location.") || statusText.includes("out for delivery")) progress = 75;
+        else if (statusText.includes("Order completed.")) progress = 100;
+        else if (statusText.includes("Delivered to your home.")) progress = 100;
+        else if (statusText.includes("Ready for collection.")) progress = 100;
 
         progressBar.style.width = progress + "%";
       }
@@ -140,6 +143,7 @@ function fallbackCopy(number) {
   }
   document.body.removeChild(input);
 }
+
 
 
 
