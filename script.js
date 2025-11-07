@@ -28,17 +28,46 @@ async function checkOrder(event) {
 
     if (order.error) {
       statusBox.innerText = "❌ " + order.error;
+
+      // Hide progress bar if error
+      const progressContainer = document.getElementById("order-progress");
+      if (progressContainer) progressContainer.classList.add("hidden");
+
     } else {
       statusBox.innerHTML = `
         <strong>${order.order}</strong><br>
         ${order.status}
       `;
+
+      // ✅ Progress bar logic
+      const progressContainer = document.getElementById("order-progress");
+      const progressBar = progressContainer ? progressContainer.querySelector(".progress-bar") : null;
+
+      if (progressContainer && progressBar) {
+        progressContainer.classList.remove("hidden");
+
+        // Default progress
+        let progress = 0;
+        const statusText = order.status.toLowerCase();
+
+        if (statusText.includes("received")) progress = 25;
+        else if (statusText.includes("processing")) progress = 50;
+        else if (statusText.includes("in transit") || statusText.includes("out for delivery")) progress = 75;
+        else if (statusText.includes("delivered")) progress = 100;
+
+        progressBar.style.width = progress + "%";
+      }
     }
   } catch (err) {
     console.error("Error fetching order:", err);
     statusBox.innerText = "Unable to check status. Please try again later.";
+
+    // Hide progress bar if error
+    const progressContainer = document.getElementById("order-progress");
+    if (progressContainer) progressContainer.classList.add("hidden");
   }
 }
+
 
 /**
  * Attach event listener
@@ -111,6 +140,7 @@ function fallbackCopy(number) {
   }
   document.body.removeChild(input);
 }
+
 
 
 
