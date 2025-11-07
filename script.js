@@ -53,7 +53,6 @@ async function checkOrder(event) {
 
         console.log("Order status text:", order.status);
 // Normalize status text for easier matching
-const statusText = order.status.toLowerCase().trim();
 
 if (statusText.includes("processing")) progress = 0;
 else if (statusText.includes("sourcing your order")) progress = 25;
@@ -149,6 +148,7 @@ function fallbackCopy(number) {
   }
   document.body.removeChild(input);
 }
+
 
 
 
