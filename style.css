@@ -410,8 +410,8 @@ footer {
 .order-result {
   max-width: 270px;
   width: 100%;
-  min-height: 92px;
-  max-height: 100px;
+  min-height: 150px;
+  max-height: 150px;
   overflow-y: auto;
   margin: 1rem auto 0 auto;   /* ✅ centers horizontally */
   background-color: rgba(225, 225, 225, 0.7);
@@ -443,6 +443,7 @@ footer {
   transition: width 0.8s ease;
   border-radius: 6px;
 }
+
 
 
 
