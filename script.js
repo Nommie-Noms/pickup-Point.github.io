@@ -112,6 +112,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function toggleMenu() {
   const nav = document.getElementById("navLinks");
+  if (!nav) {
+    console.error("navLinks not found");
+    return;
+  }
   nav.classList.toggle("active");
 }
 
@@ -153,6 +157,7 @@ function fallbackCopy(number) {
   }
   document.body.removeChild(input);
 }
+
 
 
 
