@@ -149,12 +149,18 @@ function fallbackCopy(number) {
   document.body.removeChild(input);
 }
 
+function copyWebsite() {
+  const websiteURL = "https://www.pickuppoint-courier.com/form";
+  copyNumber(websiteURL); // reuses your existing clipboard + toast logic
+}
+
 function toggleMenu() {
   const nav = document.getElementById("navLinks");
   if (nav) {
     nav.classList.toggle("active");
   }
 }
+
 
 
 
