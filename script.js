@@ -110,6 +110,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  nav.classList.toggle("active");
+}
+
 /**
  * Toast + Copy Functions
  */
@@ -148,6 +153,7 @@ function fallbackCopy(number) {
   }
   document.body.removeChild(input);
 }
+
 
 
 
