@@ -65,16 +65,37 @@ p {
   border-radius: 2px;
 }
 
-/* Mobile menu */
-.nav-links.mobile {
-  display: none;
-  flex-direction: column;
-  background: #7C94C4;
-  padding: 1rem;
-}
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 72px; /* aligns under navbar */
+    right: 0;
+    background: #7C94C4;
+    flex-direction: column;
+    padding: 1rem;
+    width: 200px;
+    z-index: 999;
+  }
 
-.nav-links.mobile a {
-  padding: 0.5rem 0;
+  /* ✅ This is what toggleMenu() activates */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.5rem 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  #contact iframe {
+    max-width: 100%;
+    border-radius: 8px;
+  }
 }
 
 /* Service Status Banner - sticky */
@@ -443,6 +464,7 @@ footer {
   transition: width 0.8s ease;
   border-radius: 6px;
 }
+
 
 
 
