@@ -125,7 +125,7 @@ function showToast(message) {
 function copyNumber(number) {
   if (navigator.clipboard && window.isSecureContext) {
     navigator.clipboard.writeText(number).then(() => {
-      showToast("Copied);
+      showToast("Copied: " + number);
     }).catch(() => {
       fallbackCopy(number);
     });
@@ -142,7 +142,7 @@ function fallbackCopy(number) {
   input.setSelectionRange(0, 99999); // for mobile devices
   try {
     document.execCommand("copy");
-    showToast("Copied);
+    showToast("Copied: " + number);
   } catch (err) {
     showToast("Failed to copy. Please copy manually.");
   }
@@ -155,6 +155,7 @@ function toggleMenu() {
     nav.classList.toggle("active");
   }
 }
+
 
 
 
