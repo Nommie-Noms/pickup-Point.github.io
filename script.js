@@ -110,15 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-function toggleMenu() {
-  const nav = document.getElementById("navLinks");
-  if (!nav) {
-    console.error("navLinks not found");
-    return;
-  }
-  nav.classList.toggle("active");
-}
-
 /**
  * Toast + Copy Functions
  */
@@ -156,6 +147,13 @@ function fallbackCopy(number) {
     showToast("Failed to copy. Please copy manually.");
   }
   document.body.removeChild(input);
+}
+
+function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  if (nav) {
+    nav.classList.toggle("active");
+  }
 }
 
 
