@@ -11,13 +11,33 @@
 <body>
 
   <!-- Navbar (same as your main page) -->
-  <nav class="navbar">
-    <h1>PickupPoint Courier</h1>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="form.html">Request Service</a>
-    </div>
+  <header class="navbar">
+  <!-- Left: Logo (reload button) -->
+  <img 
+    src="images/PICKUP_POINT_MINI.png" 
+    alt="Reload" 
+    onclick="location.reload()" 
+    style="cursor:pointer; height:40px;"
+  >
+
+  <!-- Center / Right: Navigation links -->
+  <nav class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="form.html">Request Service</a>
   </nav>
+
+  <!-- Mobile hamburger -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+
+<div class="service-status-banner">
+  <p id="service-status">✅ All Services Available</p>
+</div>
 
 <section class="form-page">
   <iframe
