@@ -465,6 +465,18 @@ footer {
   border-radius: 6px;
 }
 
+/* ===== Google Form Full-Height Page ===== */
+.form-page {
+  height: calc(100vh - 72px); /* subtract navbar height */
+  width: 100%;
+}
+
+.form-page iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 
 
 
