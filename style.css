@@ -173,6 +173,23 @@ p {
   background-color: #5b73a6;
 }
 
+.copy-form-btn {
+  margin-top: 0.75rem;
+  background-color: #7C94C4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.copy-form-btn:hover {
+  background-color: #5b73a6;
+}
+
+
 
 /* Result Box (directly below input) */
 .order-result {
@@ -478,6 +495,7 @@ footer {
   border: none;
   align-content:left;
 }
+
 
 
 
