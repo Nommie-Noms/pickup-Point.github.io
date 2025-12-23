@@ -149,18 +149,13 @@ function fallbackCopy(number) {
   document.body.removeChild(input);
 }
 
-function copyOrderForm() {
-  const formLink = "https://forms.gle/gdDWgFiRuMrYgAki8";
-  copyNumber(formLink); // reuses existing clipboard + toast logic
-}
-
-
 function toggleMenu() {
   const nav = document.getElementById("navLinks");
   if (nav) {
     nav.classList.toggle("active");
   }
 }
+
 
 
 
